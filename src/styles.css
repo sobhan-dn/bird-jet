@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #07131b;
+  color: #f8fbff;
+  font-family: ui-rounded, "SF Pro Rounded", "SF Pro Display", system-ui, sans-serif;
+  touch-action: none;
+}
+
+#game {
+  display: block;
+  width: 100vw;
+  height: 100dvh;
+}
+
+#hud {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top));
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.metric {
+  min-width: 76px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  background: rgba(4, 14, 21, 0.48);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.metric span {
+  display: block;
+  font-size: 18px;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.metric small {
+  display: block;
+  margin-top: 4px;
+  color: rgba(248, 251, 255, 0.68);
+  font-size: 11px;
+}
+
+.panel {
+  position: fixed;
+  inset: auto 18px max(124px, calc(env(safe-area-inset-bottom) + 112px)) 18px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 8px;
+  background: rgba(5, 18, 27, 0.68);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+}
+
+.panel.hidden {
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(44px, 12vw, 76px);
+  letter-spacing: 0;
+  line-height: 0.9;
+}
+
+p {
+  margin: 0 0 16px;
+  color: rgba(248, 251, 255, 0.78);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.actions,
+#touch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+button {
+  min-height: 48px;
+  border: 0;
+  border-radius: 8px;
+  color: #07131b;
+  background: #f6d860;
+  font: inherit;
+  font-weight: 850;
+  cursor: pointer;
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.18), 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.18), 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+#generate {
+  color: #f8fbff;
+  background: #237c8a;
+}
+
+#touch {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  grid-template-columns: 1.15fr 1fr 1fr;
+}
+
+#touch button {
+  min-height: 68px;
+  color: #f8fbff;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(14px);
+}
+
+#flap {
+  background: rgba(246, 216, 96, 0.9) !important;
+  color: #07131b !important;
+}
+
+#shift {
+  background: rgba(40, 144, 170, 0.88) !important;
+}
+
+#blast {
+  background: rgba(232, 85, 91, 0.88) !important;
+}
+
+@media (min-width: 760px) {
+  .panel {
+    inset: auto auto 128px 50%;
+    width: min(440px, calc(100vw - 40px));
+    transform: translateX(-50%);
+  }
+
+  .panel.hidden {
+    transform: translateX(-50%) translateY(16px);
+  }
+
+  #touch {
+    left: 50%;
+    right: auto;
+    width: 420px;
+    transform: translateX(-50%);
+  }
+}
