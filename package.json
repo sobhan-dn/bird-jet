@@ -1,0 +1,15 @@
+{
+  "name": "bird-jet",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "vite --host 127.0.0.1",
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "devDependencies": {
+    "playwright": "^1.60.0",
+    "vite": "^5.4.11"
+  }
+}
