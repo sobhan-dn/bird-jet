@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Bird Jet</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <canvas id="game" aria-label="Bird Jet game canvas"></canvas>
+    <div id="hud">
+      <div class="metric"><span id="score">0</span><small>امتیاز</small></div>
+      <div class="metric"><span id="combo">x1</span><small>جهش</small></div>
+      <div class="metric"><span id="mode">پرنده</span><small>حالت</small></div>
+    </div>
+    <div id="menu" class="panel">
+      <h1>Bird Jet</h1>
+      <p>با ضربه‌های پشت سر هم اوج بگیر، در لحظه درست جت شو، و دشمن‌هایی را که مثل تو تغییر حالت می‌دهند شکار کن.</p>
+      <div class="actions">
+        <button id="start">شروع</button>
+        <button id="generate">تولید دنیا</button>
+      </div>
+    </div>
+    <div id="touch">
+      <button id="flap" aria-label="Flap">بال</button>
+      <button id="shift" aria-label="Shift mode">جت</button>
+      <button id="blast" aria-label="Blast">شلیک</button>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
