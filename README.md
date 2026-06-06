@@ -1,34 +1,29 @@
-# Bird Jet
+# Flowcraft
 
-A mobile-first arcade web game where the player switches between a combo-jumping bird and a free-flight jet.
+Flowcraft is a mobile-first 2D touch puzzle game. Draw glowing rails before the spring opens, route the water into the collector, collect gems, and survive increasingly strange lab layouts.
 
-## Play
+## Play Locally
 
 ```bash
-npm install
-npm run dev
+python3 -m http.server 5173 --bind 0.0.0.0
 ```
 
-Open `http://127.0.0.1:5173`.
+Open:
 
-## Controls
+```text
+http://127.0.0.1:5173
+```
 
-- `Space` or the `بال` button: flap as bird, boost as jet
-- `E` or the `جت` button: switch between bird and jet
-- `R` or the `شلیک` button: fire
-- `WASD` / arrow keys: steer the jet
-- Touch-drag on the game canvas: steer the jet on mobile
+If your phone is on the same Wi-Fi as the laptop, use the laptop LAN IP with port `5173`.
 
-## Publishing
+## Publish With GitHub Pages
 
-This repo includes a GitHub Pages workflow. Every push to `main` builds the game with Vite and publishes the static site from `dist`.
+This repo includes a GitHub Actions workflow at `.github/workflows/pages.yml`.
 
-In GitHub, enable Pages with:
+Once Pages is configured with `GitHub Actions` as the source, every push to `main` deploys the current game automatically.
 
-- Source: `GitHub Actions`
+## Files
 
-Then push to `main`. Your friend can publish updates by pulling, editing, committing, and pushing.
-
-## Persian Summary
-
-این بازی برای موبایل طراحی شده: در حالت پرنده با بال زدن combo و پرش بیشتر می‌گیری، در حالت جت آزادانه عقب/جلو/بالا/پایین می‌روی. با `E` حالت عوض می‌شود و با `R` تیر می‌زنی. هر push روی `main` می‌تواند مستقیم با GitHub Actions منتشر شود.
+- `index.html` - app shell
+- `style.css` - responsive mobile UI
+- `game.js` - canvas game logic, touch drawing, water physics, levels, gems, portals
